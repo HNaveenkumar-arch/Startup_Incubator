@@ -4,29 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Startup Incubator - Page Not Found">
-    <meta property="og:title" content="Startup Incubator - 404 Error">
-    <meta property="og:description" content="Oops! The startup idea you're looking for hasn't hatched yet.">
+    <meta property="og:title" content="Your Website Title Here">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:type" content="website">
-
-    <title>404 - Pivot Required | Startup Incubator</title>
-
+    <meta name="description"
+        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+    <title>404 - Stealth Mode | Startup Incubator</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         :root {
-             
-            --primary-accent: #0ea5e9;
-            --hover-accent: #0284c7;
-            --navy-dark: #0f172a;
-            --navy-card: rgba(15, 23, 42, 0.85);
-
-            --text-light: #f8fafc;
-            --text-gray: #94a3b8;
-            --glass-border: rgba(14, 165, 233, 0.3);
+            --primary: #8a2be2;
+            --secondary: #00e5ff;
+            --bg-dark: #0a0b10;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(15, 17, 26, 0.75);
         }
 
         * {
@@ -36,304 +34,291 @@
         }
 
         body {
-            background: var(--navy-dark);
+            background-color: var(--bg-dark);
             font-family: 'Inter', sans-serif;
-            color: var(--text-light);
+            color: var(--text-main);
             min-height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            perspective: 1500px;
+            position: relative;
         }
 
-        .error-bg-glow {
+
+        .radar-container {
             position: absolute;
-            width: 150vw;
-            height: 150vw;
-            max-width: 1200px;
-            max-height: 1200px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: -1;
-            pointer-events: none;
-            animation: pulseGlow 6s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-            0% {
-                transform: translate(-50%, -50%) scale(0.9);
-                opacity: 0.6;
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 1;
-            }
-        }
-
-        .scrolling-grid {
-            position: absolute;
-            top: 10%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background-image:
-                linear-gradient(rgba(14, 165, 233, 0.15) 2px, transparent 2px),
-                linear-gradient(90deg, rgba(14, 165, 233, 0.15) 2px, transparent 2px);
-            background-size: 60px 60px;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 229, 255, 0.1);
             z-index: 0;
-            pointer-events: none;
-            transform: rotateX(75deg);
-            animation: infiniteGridScroll 15s linear infinite;
-            mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 70%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 70%);
-        }
-
-        @keyframes infiniteGridScroll {
-            0% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 0 600px;
-            }
-        }
-
-        .error-container {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 60px 40px;
-            width: 90%;
-            max-width: 600px;
-            background: var(--navy-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 24px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(14, 165, 233, 0.05);
-            transition: transform 0.1s ease-out;
-        }
-
-        .status-badge {
-            background: rgba(14, 165, 233, 0.15);
-            border: 1px solid rgba(14, 165, 233, 0.4);
-            color: var(--primary-accent);
-            padding: 8px 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
-        }
-
-        .status-badge i {
-            animation: blinker 2s linear infinite;
-        }
-
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        .error-code-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .error-code {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9rem;
-            font-weight: 900;
-            line-height: 1;
-            color: transparent;
-            -webkit-text-stroke: 2px var(--primary-accent);
-            text-shadow: 4px 4px 0px rgba(14, 165, 233, 0.2), 0 0 30px rgba(14, 165, 233, 0.4);
-            animation: floatingText 6s ease-in-out infinite;
-        }
-
-        .flying-icon {
-            position: absolute;
-            top: -10px;
-            right: -45px;
-            font-size: 3.5rem;
-            color: var(--primary-accent);
-            animation: floatAndRotate 8s ease-in-out infinite;
-            filter: drop-shadow(0 10px 15px rgba(14, 165, 233, 0.3));
-            z-index: 15;
-        }
-
-        @keyframes floatingText {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes floatAndRotate {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-
-            25% {
-                transform: translate(15px, -20px) rotate(15deg) scale(1.1);
-            }
-
-            50% {
-                transform: translate(0px, -30px) rotate(45deg) scale(1);
-            }
-
-            75% {
-                transform: translate(-15px, -15px) rotate(15deg) scale(0.9);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-        }
-
-        .error-desc {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-
-        .error-actions {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+        }
+
+        .radar-container::before,
+        .radar-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 229, 255, 0.05);
+        }
+
+        .radar-container::before {
+            width: 500px;
+            height: 500px;
+        }
+
+        .radar-container::after {
+            width: 250px;
+            height: 250px;
+        }
+
+        .radar-sweep {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 70%, rgba(0, 229, 255, 0.15) 100%);
+            animation: radarSpin 4s linear infinite;
+        }
+
+        @keyframes radarSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .error-card {
+            position: relative;
+            z-index: 10;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .glitch-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--secondary);
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: var(--secondary);
+            -webkit-text-stroke: 0px;
+            opacity: 0.8;
+        }
+
+        .glitch-text::before {
+            left: 3px;
+            text-shadow: -2px 0 var(--primary);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -3px;
+            text-shadow: 2px 0 #ff00ea;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% {
+                clip-path: inset(20% 0 80% 0);
+            }
+
+            20% {
+                clip-path: inset(60% 0 10% 0);
+            }
+
+            40% {
+                clip-path: inset(40% 0 50% 0);
+            }
+
+            60% {
+                clip-path: inset(80% 0 5% 0);
+            }
+
+            80% {
+                clip-path: inset(10% 0 70% 0);
+            }
+
+            100% {
+                clip-path: inset(30% 0 50% 0);
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                clip-path: inset(10% 0 60% 0);
+            }
+
+            20% {
+                clip-path: inset(30% 0 20% 0);
+            }
+
+            40% {
+                clip-path: inset(70% 0 10% 0);
+            }
+
+            60% {
+                clip-path: inset(20% 0 50% 0);
+            }
+
+            80% {
+                clip-path: inset(50% 0 30% 0);
+            }
+
+            100% {
+                clip-path: inset(5% 0 80% 0);
+            }
+        }
+
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn-base {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 30px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+        .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
             font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             flex: 1;
-            min-width: 160px;
+            min-width: 180px;
+            justify-content: center;
         }
 
         .btn-primary {
-            background: var(--primary-accent);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: #fff;
-            border: 2px solid var(--primary-accent);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+            border: none;
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px) scale(1.02);
-            background: var(--hover-accent);
-            border-color: var(--hover-accent);
-            box-shadow: 0 15px 30px rgba(14, 165, 233, 0.5);
-        }
-
-        .btn-primary:hover i {
-            transform: translateX(-5px);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+            transform: translateY(-3px);
         }
 
         .btn-outline {
-            background: transparent;
-            color: var(--primary-accent);
-            border: 2px solid var(--primary-accent);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--secondary);
+            border: 1px solid rgba(0, 229, 255, 0.3);
         }
 
         .btn-outline:hover {
-            transform: translateY(-5px) scale(1.02);
-            background: var(--primary-accent);
-            color: #fff;
-            box-shadow: 0 15px 30px rgba(14, 165, 233, 0.3);
+            background: rgba(0, 229, 255, 0.1);
+            border-color: var(--secondary);
+            transform: translateY(-3px);
         }
 
-        .btn-outline:hover i {
-            transform: scale(1.1) rotate(15deg);
-        }
 
-        .btn-base i {
-            transition: transform 0.3s ease;
-        }
-
-         
         @media (max-width: 768px) {
-            .error-code {
-                font-size: 7rem;
+            .radar-container {
+                width: 150vw;
+                height: 150vw;
             }
 
-            .flying-icon {
-                font-size: 2.8rem;
-                right: -25px;
-                top: -10px;
+            .radar-container::before {
+                width: 100vw;
+                height: 100vw;
             }
 
-            .error-container {
-                padding: 50px 30px;
+            .radar-container::after {
+                width: 50vw;
+                height: 50vw;
             }
-        }
 
-        @media (max-width: 480px) {
-            .error-container {
+            .error-card {
                 padding: 40px 20px;
-                border-radius: 20px;
-                width: 92%;
-                 
             }
 
-            .error-code {
-                font-size: 5rem;
-                -webkit-text-stroke: 1.5px var(--primary-accent);
+            .glitch-text {
+                font-size: 5.5rem;
             }
 
-            .flying-icon {
-                font-size: 2rem;
-                right: -15px;
-                top: 0px;
+            h2 {
+                font-size: 1.4rem;
             }
 
-            .status-badge {
-                font-size: 0.75rem;
-                padding: 6px 15px;
-                margin-bottom: 20px;
-            }
-
-            .error-desc {
+            p {
                 font-size: 0.95rem;
-                margin-bottom: 30px;
             }
 
-            .error-actions {
+            .btn-group {
                 flex-direction: column;
-                 
-                gap: 15px;
             }
 
-            .btn-base {
+            .btn {
                 width: 100%;
-                padding: 14px 20px;
             }
         }
     </style>
@@ -341,59 +326,27 @@
 
 <body>
 
-    <div class="error-bg-glow" id="accentGlow"></div>
-    <div class="scrolling-grid"></div>
 
-    <div class="error-container" id="errorContainer">
-
-        <div class="status-badge">
-            <i class="fa-solid fa-lightbulb"></i> Pivot Required
-        </div>
-
-        <div class="error-code-wrapper">
-            <h1 class="error-code">404</h1>
-            <i class="fa-solid fa-rocket flying-icon"></i>
-        </div>
-
-        <p class="error-desc">Oops! The idea you're looking for hasn't hatched yet, or the product failed to launch.
-            Let's iterate and try again.</p>
-
-        <div class="error-actions">
-            <a href="javascript:history.back()" class="btn-base btn-primary">
-                <i class="fa-solid fa-arrow-left"></i> Go Back
-            </a>
-            <a href="index.html" class="btn-base btn-outline">
-                <i class="fa-solid fa-house"></i> Back to Incubator
-            </a>
-        </div>
-
+    <div class="radar-container">
+        <div class="radar-sweep"></div>
     </div>
 
-    <script>
-        const container = document.getElementById('errorContainer');
-        const glow = document.getElementById('accentGlow');
 
- 
-        document.addEventListener('mousemove', (e) => {
-            if (window.innerWidth > 768) {
-                const halfW = window.innerWidth / 2;
-                const halfH = window.innerHeight / 2;
+    <div class="error-card">
+        <div class="glitch-text">404</div>
+        <h2>Idea in Stealth Mode 🕵️‍♂️</h2>
+        <p>We scanned our entire incubator network, but this page is flying under the radar. It might be deleted, moved,
+            or hasn't hatched yet.</p>
 
-                const xVal = (halfW - e.pageX) / 50;
-                const yVal = (halfH - e.pageY) / 50;
-
-                container.style.transform = `rotateY(${xVal * -1}deg) rotateX(${yVal}deg) translateY(-5px)`;
-                glow.style.transform = `translate(${-50 + xVal * 0.5}%, ${-50 + yVal * 0.5}%) scale(1.05)`;
-            }
-        });
-
-        document.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 768) {
-                container.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0)`;
-                glow.style.transform = `translate(-50%, -50%) scale(1)`;
-            }
-        });
-    </script>
+        <div class="btn-group">
+            <a href="javascript:history.back()" class="btn btn-outline">
+                <span>&#8592;</span> Go Back
+            </a>
+            <a href="index.html" class="btn btn-primary">
+                Return to Base
+            </a>
+        </div>
+    </div>
 
 </body>
 

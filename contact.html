@@ -2,127 +2,625 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartupHub Incubator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Your Website Title Here">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+  <title>StartupHub Incubator</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
 
-     
-    <header id="navbar">
-        <div class="nav-container">
 
-             
-            <a href="index.html" class="logo"><img src="./asset/Logo blue.webp" alt="logo"></a>
+  <header id="navbar">
+    <div class="nav-container">
 
-             
-            <div class="nav-wrapper" id="nav-wrapper">
-                <nav class="nav-links">
-                    <a href="index.html">
-                        <i class="fa-solid fa-house"></i> Home
-                    </a>
-                    <a href="startup.html" class="active">
-                        <i class="fa-solid fa-lightbulb"></i> Startups
-                    </a>
-                    <a href="program.html">
-                        <i class="fa-solid fa-cubes"></i> Programs
-                    </a>
-                    <a href="blog.html">
-                        <i class="fa-solid fa-newspaper"></i> Blog
-                    </a>
-                    <a href="contact.html">
-                        <i class="fa-solid fa-paper-plane"></i> Contact
-                    </a>
-                </nav>
 
-                <div class="auth-buttons">
-                    <a href="login.html" class="btn-login">Login</a>
-                    <a href="signup.html" class="btn-signup">Sign Up <span class="arrow">→</span></a>
-                </div>
+      <a href="index.html" class="logo"><img src="./asset/Logo blue.webp" alt="logo"></a>
+
+
+      <div class="nav-wrapper" id="nav-wrapper">
+        <nav class="nav-links">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+          <a href="startup.html">
+            <i class="fa-solid fa-lightbulb"></i> Startups
+          </a>
+          <a href="program.html">
+            <i class="fa-solid fa-cubes"></i> Programs
+          </a>
+          <a href="blog.html">
+            <i class="fa-solid fa-newspaper"></i> Blog
+          </a>
+          <a href="contact.html" class="active">
+            <i class="fa-solid fa-paper-plane"></i> Contact
+          </a>
+        </nav>
+
+        <div class="auth-buttons">
+          <a href="login.html" class="btn-login">Login</a>
+          <a href="signup.html" class="btn-signup">Sign Up <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <section id="contact-hero" class="contact-hero-section">
+
+
+    <div class="hero-bg-image"></div>
+    <div class="aurora-glow glow-1"></div>
+    <div class="aurora-glow glow-2"></div>
+    <div class="animated-grid"></div>
+
+
+    <div class="cursor-spotlight" id="spotlight"></div>
+
+
+    <div class="floating-icons-container">
+      <div class="float-icon icon-1">🚀</div>
+      <div class="float-icon icon-2">💡</div>
+      <div class="float-icon icon-3">💻</div>
+      <div class="float-icon icon-4">📈</div>
+    </div>
+
+    <div class="hero-content-wrapper">
+
+
+      <nav class="breadcrumbs fade-up">
+        <a href="index.html">Home</a>
+        <span class="separator">>></span>
+        <span class="current">Contact</span>
+      </nav>
+
+
+      <div class="hero-glass-card fade-up" style="animation-delay: 0.2s;">
+        <h1>Let's Build the Next Big <span>Startup</span> Together</h1>
+        <p>Whether you have a breakthrough idea, need funding, or want to join our mentor network, we're here to help
+          you scale.</p>
+
+
+        <div class="hero-cta-group">
+          <a href="404page.html" class="cta-btn primary-gradient-btn">Apply Now <span>&#8594;</span></a>
+          <a href="404page.html" class="cta-btn secondary-glass-btn">Book a Consultation</a>
+        </div>
+      </div>
+
+
+      <div class="quick-stats fade-up" style="animation-delay: 0.4s;">
+        <div class="stat-item">
+          <span class="stat-icon">📍</span>
+          <span class="stat-text">Global Startup Network</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">👨‍🏫</span>
+          <span class="stat-text">150+ Mentors</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🚀</span>
+          <span class="stat-text">500+ Incubated Startups</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">💰</span>
+          <span class="stat-text">$200M+ Funding Raised</span>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <section id="contact-form-section" class="form-section">
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="section-header fade-up">
+      <h2>Get In <span>Touch</span></h2>
+      <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+    </div>
+
+    <div class="contact-split-container fade-up" style="animation-delay: 0.2s;">
+
+      <div class="contact-illustration">
+        <div class="illustration-content">
+          <h3>Ready to Scale?</h3>
+          <p>Join the ecosystem that has built over 500+ successful startups. Let's discuss your vision.</p>
+          <ul class="contact-features">
+            <li><span>✓</span> Expert Evaluation</li>
+            <li><span>✓</span> Fast Response Time</li>
+            <li><span>✓</span> Secure & Confidential</li>
+          </ul>
+        </div>
+        <img src="./asset/t6.webp"
+          alt="Startup Meeting">
+      </div>
+
+      <div class="contact-form-wrapper">
+
+        <form id="startupContactForm" class="premium-form">
+
+          <div class="form-row">
+            <div class="input-group">
+              <input type="text" id="fullName" placeholder=" ">
+              <label>Full Name</label>
+              <div id="nameError" class="error-msg">Please enter a valid name (letters only).</div>
+            </div>
+            <div class="input-group">
+              <input type="text" id="startupName" placeholder=" ">
+              <label>Startup Name</label>
+              <div id="startupError" class="error-msg">Startup name is required.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <input type="email" id="emailAdd" placeholder=" ">
+              <label>Email Address</label>
+              <div id="emailError" class="error-msg">Please enter a valid email.</div>
+            </div>
+            <div class="input-group">
+              <input type="text" id="phoneNum" placeholder=" ">
+              <label>Phone Number</label>
+              <div id="phoneError" class="error-msg">Please enter a valid phone number (numbers only).</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <select id="startupStage">
+                <option value="" disabled selected></option>
+                <option value="idea">Idea Stage</option>
+                <option value="mvp">MVP Ready</option>
+                <option value="revenue">Generating Revenue</option>
+                <option value="scaling">Scaling</option>
+              </select>
+              <label class="select-label">Startup Stage</label>
+              <div id="stageError" class="error-msg">Please select a stage.</div>
+            </div>
+            <div class="input-group">
+              <select id="industryType">
+                <option value="" disabled selected></option>
+                <option value="fintech">FinTech</option>
+                <option value="healthtech">HealthTech</option>
+                <option value="saas">SaaS / AI</option>
+                <option value="ecommerce">E-Commerce</option>
+                <option value="other">Other</option>
+              </select>
+              <label class="select-label">Industry</label>
+              <div id="industryError" class="error-msg">Please select an industry.</div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="subject" placeholder=" ">
+            <label>Subject</label>
+            <div id="subjectError" class="error-msg">Subject is required.</div>
+          </div>
+
+          <div class="input-group">
+            <textarea id="message" rows="4" placeholder=" "></textarea>
+            <label>Message (min 10 characters)</label>
+            <div id="messageError" class="error-msg">Message must be at least 10 characters long.</div>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="termsCheck">
+            <label for="termsCheck">I agree to the Terms & Conditions and Privacy Policy.</label>
+            <div id="termsError" class="error-msg">You must agree to the terms.</div>
+          </div>
+
+          <button type="submit" id="submitBtn" class="gradient-submit-btn">
+            Send Message <span>&#8594;</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="location-section" class="map-section fade-up">
+    <div class="parallax-map-bg"></div>
+
+    <div class="map-container">
+      <div class="section-header fade-up">
+        <h2>Our <span>Headquarters</span></h2>
+        <p>Drop by our office. The coffee is on us, and the ideas are limitless.</p>
+      </div>
+
+      <div class="map-glass-wrapper fade-up" style="animation-delay: 0.2s;">
+
+        <div class="map-split-layout">
+
+          <div class="location-details">
+            <div class="pin-animation-wrapper">
+              <div class="ripple-ring"></div>
+              <div class="floating-pin">📍</div>
             </div>
 
-             
-            <button class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </button>
+            <h3>Silicon Valley Hub</h3>
+            <p class="text-muted">Join our premium ecosystem with 50+ scaling startups.</p>
+
+            <ul class="ecosystem-highlights">
+              <li><span class="highlight-icon">🚀</span> 24/7 Innovation Workspace</li>
+              <li><span class="highlight-icon">🤝</span> Exclusive Investor Lounges</li>
+              <li><span class="highlight-icon">☕</span> Premium Tech Cafe</li>
+            </ul>
+
+            <div class="map-action-buttons">
+              <button class="btn-primary gradient-btn" onclick="window.location.href='404page.html'">
+                Get Directions <span>&#8594;</span>
+              </button>
+              <button class="btn-outline map-view-toggle" onclick="window.location.href='404page.html'">
+                🛰️ Satellite View
+              </button>
+            </div>
+          </div>
+
+          <div class="iframe-container">
+            <div class="glow-border"></div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.161609877049!2d78.17140487386634!3d11.682956588526372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1781692635052!5m2!1sen!2sin"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" class="cm-iframe">
+            </iframe>
+          </div>
 
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-     
-    <section style="height: 200vh; background: #050810; padding-top: 150px; color: white; text-align: center;">
-        <h1>Welcome to StartupHub</h1>
-        <p>Scroll down to see the Sticky Glassmorphism effect in action!</p>
-        <p>Open the mobile menu to test the scroll lock.</p>
-    </section>
-    <footer class="footer">
-        <div class="footer-container">
+  <section id="contact-info-section" class="contact-info-section fade-up">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2>Contact <span>Information</span></h2>
+        <p>We're here to help you scale. Reach out to us through any of the channels below.</p>
+      </div>
 
-            <div class="footer-col footer-fade-in">
-                <a href="index.html" class="logo"><img src="./asset/Logo blue.webp" alt="logo"></a>
-                <p class="footer-desc">
-                    Empowering the next generation of founders. We transform innovative ideas into scalable businesses
-                    through seed funding, strategic mentorship, and global networking. Join the ecosystem and build the
-                    future.
-                </p>
-                <div class="social-icons">
-                    <a href="404page.html" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="404page.html" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    <a href="404page.html" title="GitHub"><i class="fab fa-github"></i></a>
+      <div class="info-grid">
 
-                    <a href="404page.html" title="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
+        <div class="flip-card fade-up" style="animation-delay: 0.1s;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-panel">
+              <div class="icon-wrapper">📍</div>
+              <h3>Office Address</h3>
             </div>
-
-            <div class="footer-col footer-fade-in" style="transition-delay: 0.1s;">
-                <h4>Explore</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="startup.html"><i class="fas fa-chevron-right"></i> Startups</a></li>
-                    <li><a href="program.html"><i class="fas fa-chevron-right"></i> Programs</a></li>
-                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                </ul>
+            <div class="flip-card-back glow-border-panel">
+              <h4>Stackly Hub</h4>
+              <p>MMR Complex, Chinna Thirupathi,<br>near Chinna Muniyappan Kovil, Salem</p>
+              <a href="404page.html" target="_blank" class="action-btn">Open in Maps</a>
             </div>
-
-            <div class="footer-col footer-fade-in" style="transition-delay: 0.2s;">
-                <h4>Resources</h4>
-                <ul class="footer-links">
-                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Pitch Deck Templates</a></li>
-                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Mentorship Guide</a></li>
-                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Funding Nodes</a></li>
-                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Community Forum</a></li>
-                    <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Help Center</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col footer-fade-in" style="transition-delay: 0.3s;">
-                <h4>Connect</h4>
-                <ul class="footer-contact">
-                    <li><i class="fas fa-envelope"></i> hello@startuphub.io</li>
-                    <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Innovation Hub, Startup Avenue,<br>Bangalore, KA 560001
-                    </li>
-                    <li><i class="fas fa-clock"></i> Mon – Fri: 9:00 AM – 6:00 PM<br>Global Nodes Active 24/7</li>
-                </ul>
-            </div>
+          </div>
         </div>
 
-        <div class="footer-bottom footer-fade-in" style="transition-delay: 0.4s;">
-            <p>&copy; 2026 StartupHub Incubator. All rights reserved. Scaling visions into reality.</p>
-            <div class="footer-bottom-links">
-                <a href="404page.html">Privacy Policy</a>
-                <a href="404page.html">Terms of Service</a>
-                <a href="404page.html">Cookie Policy</a>
+        <div class="flip-card fade-up" style="animation-delay: 0.2s;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-panel">
+              <div class="icon-wrapper">📞</div>
+              <h3>Phone Number</h3>
             </div>
+            <div class="flip-card-back glow-border-panel">
+              <h4>Call Us Directly</h4>
+              <p>+91 9876543210<br>Mon-Fri, 9AM-6PM</p>
+              <a href="404page.html" class="action-btn">Click to Call</a>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="flip-card fade-up" style="animation-delay: 0.3s;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-panel">
+              <div class="icon-wrapper">📧</div>
+              <h3>Email Address</h3>
+            </div>
+            <div class="flip-card-back glow-border-panel">
+              <h4>Drop a Message</h4>
+              <p>stackly@startupincubator.com<br>Response in 24 hrs</p>
+              <a href="404page.html" class="action-btn">Click to Email</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-up" style="animation-delay: 0.4s;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-panel">
+              <div class="icon-wrapper">🕒</div>
+              <h3>Business Hours</h3>
+            </div>
+            <div class="flip-card-back glow-border-panel">
+              <h4>Working Hours</h4>
+              <p><strong>Mon - Fri:</strong> 9:00 AM - 6:00 PM<br><strong>Sat - Sun:</strong> Closed</p>
+              <a href="404page.html"><span class="status-badge open">We are Open</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-up" style="animation-delay: 0.5s;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-panel">
+              <div class="icon-wrapper">🌐</div>
+              <h3>Social Media</h3>
+            </div>
+            <div class="flip-card-back glow-border-panel">
+              <h4>Connect With Us</h4>
+              <div class="social-icons-wrapper">
+                <a href="404page.html" class="social-icon pulse-anim">𝕏</a>
+                <a href="404page.html" class="social-icon pulse-anim">in</a>
+                <a href="404page.html" class="social-icon pulse-anim">ig</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-up" style="animation-delay: 0.6s;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-panel">
+              <div class="icon-wrapper">💬</div>
+              <h3>Live Chat Support</h3>
+            </div>
+            <div class="flip-card-back glow-border-panel">
+              <h4>24/7 Expert Support</h4>
+              <p>Need instant help?<br>Chat with our team now.</p>
+              <button class="action-btn chat-btn" onclick="window.location.href='404page.html'">Start Chat</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="cta-section" class="cta-section">
+    <div class="particle p-1"></div>
+    <div class="particle p-2"></div>
+    <div class="particle p-3"></div>
+    <div class="particle p-4"></div>
+
+    <div class="container relative-z">
+
+      <div class="glass-cta-card fade-up">
+
+        <div class="floating-illus float-rocket">🚀</div>
+        <div class="floating-illus float-bulb">💡</div>
+
+        <h2>Ready to Turn Your <span>Startup Idea</span> into Reality?</h2>
+        <p>The next big thing is just one click away. Choose your path and let's scale together.</p>
+
+        <div class="cta-button-grid">
+          <a href="404page.html" class="btn-morph primary-morph">
+            <span>Apply for Incubation</span> ➔
+          </a>
+          <a href="404page.html" class="btn-morph secondary-morph">
+            <span>Schedule Mentor Session</span> 📅
+          </a>
+          <a href="404page.html" class="btn-morph outline-morph">
+            <span>Download Brochure</span> 📄
+          </a>
+          <a href="404page.html" class="btn-morph outline-morph">
+            <span>Join Community</span> 🤝
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="wave-transition">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,123.15,191.56,105.7,238.48,92.35,283.47,73.49,321.39,56.44Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+
+
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col footer-fade-in">
+        <a href="index.html" class="logo"><img src="./asset/Logo blue.webp" alt="logo"></a>
+        <p class="footer-desc">
+          Empowering the next generation of founders. We transform innovative ideas into scalable businesses
+          through seed funding, strategic mentorship, and global networking. Join the ecosystem and build the
+          future.
+        </p>
+        <div class="social-icons">
+          <a href="404page.html" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="404page.html" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="404page.html" title="GitHub"><i class="fab fa-github"></i></a>
+
+          <a href="404page.html" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-fade-in" style="transition-delay: 0.1s;">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="startup.html"><i class="fas fa-chevron-right"></i> Startups</a></li>
+          <li><a href="program.html"><i class="fas fa-chevron-right"></i> Programs</a></li>
+          <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-fade-in" style="transition-delay: 0.2s;">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Pitch Deck Templates</a></li>
+          <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Mentorship Guide</a></li>
+          <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Funding Nodes</a></li>
+          <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Community Forum</a></li>
+          <li><a href="404page.html"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-fade-in" style="transition-delay: 0.3s;">
+        <h4>Connect</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-envelope"></i> hello@startuphub.io</li>
+          <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+          <li><i class="fas fa-map-marker-alt"></i> Innovation Hub, Startup Avenue,<br>Bangalore, KA 560001
+          </li>
+          <li><i class="fas fa-clock"></i> Mon – Fri: 9:00 AM – 6:00 PM<br>Global Nodes Active 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom footer-fade-in" style="transition-delay: 0.4s;">
+      <p>&copy; 2026 StartupHub Incubator. All rights reserved. Scaling visions into reality.</p>
+      <div class="footer-bottom-links">
+        <a href="404page.html">Privacy Policy</a>
+        <a href="404page.html">Terms of Service</a>
+        <a href="404page.html">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroSection = document.getElementById('contact-hero');
+      const spotlight = document.getElementById('spotlight');
+
+      if (heroSection && spotlight) {
+        heroSection.addEventListener('mousemove', (e) => {
+
+          const rect = heroSection.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+
+          spotlight.style.setProperty('--mouse-x', `${x}px`);
+          spotlight.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+
+        heroSection.addEventListener('mouseleave', () => {
+          spotlight.style.opacity = '0';
+        });
+
+
+        heroSection.addEventListener('mouseenter', () => {
+          spotlight.style.opacity = '1';
+        });
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('startupContactForm');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+
+        const name = document.getElementById('fullName').value.trim();
+        const startup = document.getElementById('startupName').value.trim();
+        const email = document.getElementById('emailAdd').value.trim();
+        const phone = document.getElementById('phoneNum').value.trim();
+        const stage = document.getElementById('startupStage').value;
+        const industry = document.getElementById('industryType').value;
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const terms = document.getElementById('termsCheck').checked;
+
+
+        const toggleError = (id, condition) => {
+          const inputGroup = document.getElementById(id).parentElement;
+          const errorMsg = document.getElementById(id.replace('fullName', 'name')
+            .replace('startupName', 'startup')
+            .replace('emailAdd', 'email')
+            .replace('phoneNum', 'phone')
+            .replace('startupStage', 'stage')
+            .replace('industryType', 'industry')
+            .replace('termsCheck', 'terms') + 'Error');
+          if (!condition) {
+            errorMsg.style.display = 'block';
+            inputGroup.classList.add('error');
+            isValid = false;
+          } else {
+            errorMsg.style.display = 'none';
+            inputGroup.classList.remove('error');
+          }
+        };
+
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+        toggleError('fullName', name !== '' && nameRegex.test(name));
+
+
+        toggleError('startupName', startup !== '');
+
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        toggleError('emailAdd', email !== '' && emailRegex.test(email));
+
+
+        const phoneRegex = /^\+?[0-9]+$/;
+        toggleError('phoneNum', phone !== '' && phoneRegex.test(phone));
+
+
+        toggleError('startupStage', stage !== '');
+        toggleError('industryType', industry !== '');
+
+
+        toggleError('subject', subject !== '');
+
+
+        toggleError('message', message.length >= 10);
+
+
+        const termsError = document.getElementById('termsError');
+        if (!terms) {
+          termsError.style.display = 'block';
+          isValid = false;
+        } else {
+          termsError.style.display = 'none';
+        }
+
+
+        if (isValid) {
+          window.location.href = '404page.html';
+        }
+      });
+
+
+      document.getElementById('fullName').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[0-9]/g, '');
+      });
+
+      document.getElementById('phoneNum').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9+]/g, '');
+      });
+    });
+  </script>
 </body>
 
 </html>

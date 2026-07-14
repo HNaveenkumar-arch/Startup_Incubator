@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Your Website Title Here">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
     <title>StartupHub Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-         
         * {
             box-sizing: border-box;
             margin: 0;
@@ -37,14 +44,14 @@
             }
         }
 
-         
+
         .page-wrapper {
             width: 100%;
             max-width: 1100px;
             position: relative;
         }
 
-         
+
         .btn-back-home {
             position: absolute;
             top: -45px;
@@ -73,7 +80,7 @@
             transform: translateY(-2px);
         }
 
-         
+
         .login-container {
             display: flex;
             width: 100%;
@@ -86,7 +93,7 @@
             min-height: 600px;
         }
 
-         
+
         .form-section {
             flex: 1;
             padding: 50px 40px;
@@ -116,7 +123,7 @@
             margin-bottom: 30px;
         }
 
-         
+
         .role-selector {
             display: flex;
             background: rgba(0, 0, 0, 0.3);
@@ -148,7 +155,7 @@
             box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
         }
 
-         
+
         .input-group {
             margin-bottom: 20px;
             position: relative;
@@ -167,7 +174,7 @@
         .input-field {
             width: 100%;
             padding: 14px 40px;
-             
+
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
@@ -189,7 +196,7 @@
             color: #6C63FF;
         }
 
-         
+
         .toggle-pwd {
             position: absolute;
             right: 15px;
@@ -204,7 +211,7 @@
             color: #6C63FF;
         }
 
-         
+
         .error-message {
             color: #FF6B6B;
             font-size: 12px;
@@ -244,7 +251,7 @@
             color: #6C63FF;
         }
 
-         
+
         .submit-btn {
             width: 100%;
             padding: 15px;
@@ -264,7 +271,7 @@
             box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
-         
+
         .divider {
             display: flex;
             align-items: center;
@@ -328,7 +335,7 @@
             font-weight: bold;
         }
 
-         
+
         .content-section {
             flex: 1;
             position: relative;
@@ -397,7 +404,7 @@
             line-height: 1.6;
         }
 
-         
+
         @media (max-width: 900px) {
             .btn-back-home {
                 top: -40px;
@@ -418,6 +425,10 @@
                 padding: 20px;
             }
         }
+
+        .logo {
+            width: 140px;
+        }
     </style>
 </head>
 
@@ -431,7 +442,7 @@
 
         <div class="login-container">
             <div class="form-section">
-                <h1 class="logo-title">🚀 <span>StartupHub</span></h1>
+                <a href="index.html"><img src="./asset/Logo blue.webp" alt="logo" class="logo"></a>
                 <h2 style="font-size: 22px; margin-top: 15px; margin-bottom: 5px;">Welcome Back</h2>
                 <p class="subtitle">Enter credentials to access your dashboard.</p>
 
@@ -466,7 +477,7 @@
                         <label class="checkbox-label">
                             <input type="checkbox"> Remember Me
                         </label>
-                        <a href="#" class="forgot-link">Forgot Password?</a>
+                        <a href="404page.html" class="forgot-link">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="submit-btn">AUTHENTICATE</button>
@@ -475,10 +486,14 @@
                 <div class="divider">STARTUP NETWORKS</div>
 
                 <div class="social-login">
-                    <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="social-btn" title="Product Hunt"><i class="fa-brands fa-product-hunt"></i></a>
-                    <a href="#" class="social-btn" title="AngelList"><i class="fa-brands fa-angellist"></i></a>
+                    <a href="404page.html" class="social-btn" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" class="social-btn" title="X (Twitter)"><i
+                            class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404page.html" class="social-btn" title="Product Hunt"><i
+                            class="fa-brands fa-product-hunt"></i></a>
+                    <a href="404page.html" class="social-btn" title="AngelList"><i
+                            class="fa-brands fa-angellist"></i></a>
                 </div>
 
                 <p class="signup-link">New to StartupHub? <a href="signup.html">Apply Now</a></p>
@@ -486,7 +501,7 @@
 
             <div class="content-section">
                 <video class="bg-video" autoplay loop muted playsinline>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="./asset/v5.mp4" type="video/mp4">
                 </video>
                 <div class="video-overlay"></div>
 
@@ -504,14 +519,14 @@
     </div>
 
     <script>
- 
+
         function selectRole(role, element) {
             document.getElementById('selectedRole').value = role;
             document.querySelectorAll('.role-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
         }
 
- 
+
         function togglePassword(inputId, iconElement) {
             const input = document.getElementById(inputId);
             if (input.type === "password") {
@@ -525,7 +540,7 @@
             }
         }
 
- 
+
         function validateForm(event) {
             event.preventDefault(); // Stop page reload
 
@@ -535,30 +550,37 @@
             const emailError = document.getElementById('emailError');
             const passwordError = document.getElementById('passwordError');
 
- 
             email.classList.remove('error');
             password.classList.remove('error');
             emailError.style.display = 'none';
             passwordError.style.display = 'none';
 
- 
             if (email.value.trim() === '' || !email.value.includes('@') || !email.value.includes('.')) {
                 email.classList.add('error');
                 emailError.style.display = 'block';
                 isValid = false;
             }
 
- 
             if (password.value.trim().length < 6) {
                 password.classList.add('error');
                 passwordError.style.display = 'block';
                 isValid = false;
             }
 
- 
             if (isValid) {
-                const role = document.getElementById('selectedRole').value;
-                alert(`Successfully authenticated as ${role.toUpperCase()}!\n\nEmail: ${email.value}`);
+                const role = document.getElementById('selectedRole').value.toLowerCase();
+
+
+                localStorage.setItem('loggedInEmail', email.value);
+
+
+                if (role === 'founder') {
+                    window.location.href = 'dashboard1.html';
+                } else if (role === 'admin') {
+                    window.location.href = 'dashboard2.html';
+                } else {
+                    alert("Please select a valid role!");
+                }
             }
 
             return isValid;

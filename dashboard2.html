@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Your Website Title Here">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+    <title>Incubator - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <a href="index.html" class="logo">
+            <img src="./asset/Logo blue.webp" alt="logo">
+        </a>
+
+        <ul class="nav-links">
+            <li><a class="nav-item active" onclick="switchTab('tab-dashboard', this, 'Admin Dashboard')">
+                    <i class="fas fa-chart-pie"></i> Dashboard</a></li>
+
+            <li><a class="nav-item" onclick="switchTab('tab-startups', this, 'Startup Management')">
+                    <i class="fas fa-building"></i> Startups</a></li>
+
+            <li><a class="nav-item" onclick="switchTab('tab-mentors', this, 'Mentor Management')">
+                    <i class="fas fa-chalkboard-teacher"></i> Mentors</a></li>
+
+            <li><a class="nav-item" onclick="switchTab('tab-programs', this, 'Programs')">
+                    <i class="fas fa-calendar-alt"></i> Programs</a></li>
+
+            <li><a class="nav-item" onclick="switchTab('tab-investors', this, 'Investor Network')">
+                    <i class="fas fa-handshake"></i> Investor Network</a></li>
+
+            <li><a class="nav-item" onclick="switchTab('tab-settings', this, 'Settings')">
+                    <i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <ul class="nav-links bottom-links">
+            <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i> Back To Home</a></li>
+            <li><a href="login.html" class="nav-item danger-link" onclick="localStorage.removeItem('loggedInEmail')">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content" id="mainContent">
+        <header class="topbar">
+            <div class="topbar-left">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
+                <h2 id="dynamic-page-title" class="page-title">Admin Dashboard</h2>
+            </div>
+            <div class="profile">
+                <div class="profile-info">
+                    <span class="user-name">Admin</span>
+                    <small class="user-email-display">Loading...</small>
+                </div>
+                <img src="./asset/i7.webp" alt="Profile Image" class="avatar-img">
+            </div>
+        </header>
+
+        <div class="dashboard-body" id="dashboardBody">
+
+            <div id="tab-dashboard" class="content-tab active-tab">
+                <div class="welcome-banner glass-panel anim-item">
+                    <div class="banner-content">
+                        <h2>Welcome back, <span class="user-name gradient-text">Admin</span>! ⚡</h2>
+                        <p>Here is the overall overview of our incubator operations.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid anim-item">
+                    <div class="stat-card glass-panel">
+                        <div class="icon-box" style="color: var(--secondary);"><i class="fas fa-rocket"></i></div>
+                        <div>
+                            <h3>Active Startups</h3>
+                            <h2>42</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <div class="icon-box" style="color: var(--primary);"><i class="fas fa-users"></i></div>
+                        <div>
+                            <h3>Registered Mentors</h3>
+                            <h2>18</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <div class="icon-box" style="color: var(--accent);"><i class="fas fa-sack-dollar"></i></div>
+                        <div>
+                            <h3>Total Funding ($)</h3>
+                            <h2>$1.2M</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container glass-panel anim-item">
+                    <h3>Incubator Growth (New Startups Joined)</h3>
+                    <div style="height: 300px; width: 100%;">
+                        <canvas id="adminChart"></canvas>
+                    </div>
+                </div>
+
+
+                <div class="portfolio-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-chart-line" style="color: var(--secondary);"></i>
+                        Portfolio Overview</h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-card glass-panel">
+                            <p>Total Portfolio Value</p>
+                            <h2 class="gradient-text">$45.5M</h2>
+                            <span class="trend up"><i class="fas fa-arrow-up"></i> 12% from last year</span>
+                        </div>
+                        <div class="portfolio-card glass-panel">
+                            <p>Average Equity Held</p>
+                            <h2 style="color: #fff;">8.5%</h2>
+                            <span class="trend neutral"><i class="fas fa-minus"></i> Standard</span>
+                        </div>
+                        <div class="portfolio-card glass-panel">
+                            <p>Successful Exits</p>
+                            <h2 style="color: #4CAF50;">4</h2>
+                            <span class="trend up"><i class="fas fa-arrow-up"></i> 1 this quarter</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cohort-progress-section glass-panel anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title" style="border-bottom: none;"><i class="fas fa-layer-group"
+                            style="color: var(--primary);"></i> Active Cohort Progress</h3>
+                    <div class="cohort-list">
+                        <div class="cohort-item">
+                            <div class="cohort-info">
+                                <h4>Batch #12 (Tech & AI)</h4>
+                                <span>Week 8 of 12 - Pitch Prep</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill" style="width: 75%; background: var(--primary);"></div>
+                            </div>
+                        </div>
+                        <div class="cohort-item">
+                            <div class="cohort-info">
+                                <h4>Batch #13 (Green Energy)</h4>
+                                <span>Week 3 of 12 - MVP Building</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill" style="width: 25%; background: var(--secondary);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="pipeline-table-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-file-signature" style="color: var(--accent);"></i> Recent
+                        Applications</h3>
+                    <div class="table-container glass-panel">
+                        <table class="premium-table">
+                            <thead>
+                                <tr>
+                                    <th>Startup Name</th>
+                                    <th>Industry</th>
+                                    <th>Stage</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>NeuroSync</strong></td>
+                                    <td>HealthTech</td>
+                                    <td>Pre-Seed</td>
+                                    <td><span class="status-badge pending">In Review</span></td>
+                                    <td><button class="btn-text-primary"
+                                            onclick="window.location.href='404page.html'">Review</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>EcoDeliver</strong></td>
+                                    <td>Logistics</td>
+                                    <td>Seed</td>
+                                    <td><span class="status-badge approved">Interview</span></td>
+                                    <td><button class="btn-text-primary"
+                                            onclick="window.location.href='404page.html'">Schedule</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CloudSecure</strong></td>
+                                    <td>Cybersecurity</td>
+                                    <td>Idea</td>
+                                    <td><span class="status-badge rejected"
+                                            style="background: rgba(255, 107, 107, 0.2); color: var(--accent);">Rejected</span>
+                                    </td>
+                                    <td><button class="btn-text-primary" onclick="window.location.href='404page.html'"
+                                            style="color: var(--text-muted);">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="admin-events-section glass-panel anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-calendar-alt" style="color: #FFD700;"></i> Upcoming
+                        Incubator Events</h3>
+                    <div class="events-timeline">
+                        <div class="event-row">
+                            <div class="event-date">
+                                <span>OCT</span>
+                                <strong>18</strong>
+                            </div>
+                            <div class="event-details">
+                                <h4>Q3 Investor Mixer</h4>
+                                <p>Virtual Event • 50+ VCs registered</p>
+                            </div>
+                            <button class="btn-outline-small" onclick="window.location.href='404page.html'">Manage
+                                Event</button>
+                        </div>
+                        <div class="event-row">
+                            <div class="event-date"
+                                style="background: rgba(108, 99, 255, 0.1); border-color: var(--primary);">
+                                <span style="color: var(--primary);">NOV</span>
+                                <strong>05</strong>
+                            </div>
+                            <div class="event-details">
+                                <h4>Cohort #12 Demo Day</h4>
+                                <p>Main Hall, NY • Pitching starts at 10 AM</p>
+                            </div>
+                            <button class="btn-outline-small" onclick="window.location.href='404page.html'">Manage
+                                Event</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="quick-tools-section anim-item" style="margin-top: 35px; margin-bottom: 35px;">
+                    <h3 class="section-title"><i class="fas fa-toolbox" style="color: #4CAF50;"></i> Quick Admin Tools
+                    </h3>
+                    <div class="tools-grid">
+                        <div class="tool-card glass-panel">
+                            <i class="fas fa-user-plus" style="color: var(--primary);"></i>
+                            <h4>Add Startup</h4>
+                            <p>Manually onboard a new company</p>
+                        </div>
+                        <div class="tool-card glass-panel">
+                            <i class="fas fa-envelope-open-text" style="color: var(--secondary);"></i>
+                            <h4>Broadcast</h4>
+                            <p>Send announcement to all founders</p>
+                        </div>
+                        <div class="tool-card glass-panel">
+                            <i class="fas fa-file-invoice-dollar" style="color: var(--accent);"></i>
+                            <h4>Disburse Funds</h4>
+                            <p>Manage seed grant releases</p>
+                        </div>
+                        <div class="tool-card glass-panel">
+                            <i class="fas fa-download" style="color: #fff;"></i>
+                            <h4>Export Reports</h4>
+                            <p>Download monthly KPI sheets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="tab-startups" class="content-tab">
+
+
+                <div class="app-banner glass-panel anim-item">
+                    <div class="app-banner-content">
+                        <span class="badge" style="background: rgba(108, 99, 255, 0.2); color: var(--primary);">Intake
+                            Process</span>
+                        <h2>Cohort #14 Onboarding</h2>
+                        <p>Welcome the newly selected startups into the incubator program. Complete their legal
+                            paperwork, allocate initial funding tranches, and assign lead mentors to kickstart their
+                            journey.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-file-contract"></i> 12 Pending Contracts</span>
+                            <span><i class="fas fa-user-plus"></i> 45 Founders</span>
+                        </div>
+                        <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-play"></i> Initiate Onboarding</button>
+                    </div>
+                    <div class="app-banner-image">
+                        <img src="./asset/i8.webp" alt="Onboarding">
+                    </div>
+                </div>
+
+
+                <div class="startup-directory-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-building" style="color: var(--secondary);"></i> Active
+                        Startups Directory</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Comprehensive overview of all startups
+                        currently undergoing incubation.</p>
+                    <div class="directory-grid">
+
+                        <div class="directory-card glass-panel">
+                            <div class="dir-header">
+                                <div class="dir-logo"><i class="fas fa-brain"></i></div>
+                                <div>
+                                    <h4>NeuroSync AI</h4>
+                                    <span class="dir-badge">HealthTech</span>
+                                </div>
+                            </div>
+                            <p class="dir-desc">Developing non-invasive brain-computer interfaces for clinical
+                                rehabilitation.</p>
+                            <div class="dir-stats">
+                                <div class="stat"><small>Stage</small><strong>Seed</strong></div>
+                                <div class="stat"><small>Founders</small><strong>3</strong></div>
+                                <div class="stat"><small>Funding</small><strong>$150k</strong></div>
+                            </div>
+                            <div class="dir-footer">
+                                <span class="status-indicator active"><i class="fas fa-circle"></i> On Track</span>
+                                <button class="btn-text-primary" onclick="window.location.href='404page.html'">View
+                                    Profile <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+
+                        <div class="directory-card glass-panel">
+                            <div class="dir-header">
+                                <div class="dir-logo" style="background: var(--secondary);"><i class="fas fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <h4>EcoLogix</h4>
+                                    <span class="dir-badge">CleanTech</span>
+                                </div>
+                            </div>
+                            <p class="dir-desc">Smart supply chain optimization platform reducing carbon footprints for
+                                enterprise logistics.</p>
+                            <div class="dir-stats">
+                                <div class="stat"><small>Stage</small><strong>Pre-Seed</strong></div>
+                                <div class="stat"><small>Founders</small><strong>2</strong></div>
+                                <div class="stat"><small>Funding</small><strong>$50k</strong></div>
+                            </div>
+                            <div class="dir-footer">
+                                <span class="status-indicator warning"><i class="fas fa-circle"></i> Needs Review</span>
+                                <button class="btn-text-primary" onclick="window.location.href='404page.html'">View
+                                    Profile <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+
+                        <div class="directory-card glass-panel">
+                            <div class="dir-header">
+                                <div class="dir-logo" style="background: var(--accent);"><i
+                                        class="fas fa-shield-alt"></i></div>
+                                <div>
+                                    <h4>VaultSec</h4>
+                                    <span class="dir-badge">Cybersecurity</span>
+                                </div>
+                            </div>
+                            <p class="dir-desc">Decentralized identity verification API for banking and financial
+                                institutions.</p>
+                            <div class="dir-stats">
+                                <div class="stat"><small>Stage</small><strong>Series A</strong></div>
+                                <div class="stat"><small>Founders</small><strong>4</strong></div>
+                                <div class="stat"><small>Funding</small><strong>$1.2M</strong></div>
+                            </div>
+                            <div class="dir-footer">
+                                <span class="status-indicator active"><i class="fas fa-circle"></i> Scaling</span>
+                                <button class="btn-text-primary" onclick="window.location.href='404page.html'">View
+                                    Profile <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner reverse-banner glass-panel anim-item"
+                    style="margin-top: 35px; border-left: none; border-right: 4px solid var(--accent);">
+                    <div class="app-banner-image">
+                        <img src="./asset/t7.webp" alt="Performance Review">
+                    </div>
+                    <div class="app-banner-content">
+                        <h2>Quarterly Performance Audit</h2>
+                        <p>Conduct detailed evaluations of startup KPIs, milestone achievements, and burn rates.
+                            Identify struggling teams early to provide targeted intervention, pivot strategies, or
+                            initiate probation protocols.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-exclamation-triangle"></i> 3 Startups At-Risk</span>
+                            <span><i class="fas fa-chart-line"></i> 85% Cohort Health</span>
+                        </div>
+                        <button class="btn-accent" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-clipboard-check"></i> Start Audit</button>
+                    </div>
+                </div>
+
+
+                <div class="stage-tracker-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-route" style="color: #4CAF50;"></i> Cohort Journey
+                        Tracker</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Monitor how many startups are currently in
+                        each phase of the incubation lifecycle.</p>
+
+                    <div class="stages-container glass-panel">
+                        <div class="stage-step">
+                            <div class="stage-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h4>Ideation & MVP</h4>
+                            <h2>14</h2>
+                            <p>Startups</p>
+                        </div>
+                        <div class="stage-divider"></div>
+                        <div class="stage-step">
+                            <div class="stage-icon"
+                                style="background: rgba(0, 212, 255, 0.2); color: var(--secondary); border-color: var(--secondary);">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Product-Market Fit</h4>
+                            <h2>22</h2>
+                            <p>Startups</p>
+                        </div>
+                        <div class="stage-divider"></div>
+                        <div class="stage-step">
+                            <div class="stage-icon"
+                                style="background: rgba(108, 99, 255, 0.2); color: var(--primary); border-color: var(--primary);">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>Growth & Scaling</h4>
+                            <h2>8</h2>
+                            <p>Startups</p>
+                        </div>
+                        <div class="stage-divider"></div>
+                        <div class="stage-step">
+                            <div class="stage-icon"
+                                style="background: rgba(255, 215, 0, 0.2); color: #FFD700; border-color: #FFD700;"><i
+                                    class="fas fa-graduation-cap"></i></div>
+                            <h4>Graduation Ready</h4>
+                            <h2>5</h2>
+                            <p>Startups</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner glass-panel anim-item" style="margin-top: 35px; border-color: #FFD700;">
+                    <div class="app-banner-content">
+                        <span class="badge"
+                            style="background: rgba(255, 215, 0, 0.2); color: #FFD700;">Post-Incubation</span>
+                        <h2>Alumni Network Management</h2>
+                        <p>Maintain relationships with successfully graduated startups. Leverage their success stories
+                            for marketing, invite them back as guest mentors, and track their long-term valuation
+                            growth.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-globe"></i> 120+ Alumni</span>
+                            <span><i class="fas fa-hand-holding-usd"></i> $500M+ Valuations</span>
+                        </div>
+                        <button class="btn-outline-primary" onclick="window.location.href='404page.html'"
+                            style="color: #FFD700; border-color: #FFD700;"><i class="fas fa-network-wired"></i> Access
+                            Alumni Portal</button>
+                    </div>
+                    <div class="app-banner-image">
+                        <img src="./asset/d2.webp" alt="Alumni Network">
+                    </div>
+                </div>
+
+
+                <div class="resource-allocation-section anim-item" style="margin-top: 35px; margin-bottom: 35px;">
+                    <h3 class="section-title"><i class="fas fa-server" style="color: var(--primary);"></i> Resource
+                        Allocation</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Manage physical workspace, cloud credits,
+                        and legal counseling hours assigned to startups.</p>
+
+                    <div class="allocation-grid">
+                        <div class="alloc-card glass-panel">
+                            <div class="alloc-header">
+                                <i class="fas fa-chair" style="color: var(--primary);"></i>
+                                <h4>Co-working Space</h4>
+                            </div>
+                            <div class="alloc-details">
+                                <p>Total Seats: <strong>150</strong></p>
+                                <p>Occupied: <strong>135</strong></p>
+                            </div>
+                            <div class="draft-bar-bg">
+                                <div class="draft-bar-fill" style="width: 90%; background: var(--accent);"></div>
+                            </div>
+                            <button class="btn-text-primary" onclick="window.location.href='404page.html'"
+                                style="margin-top: 10px;">Manage Desks</button>
+                        </div>
+
+                        <div class="alloc-card glass-panel">
+                            <div class="alloc-header">
+                                <i class="fas fa-cloud" style="color: var(--secondary);"></i>
+                                <h4>Cloud Credits Pool</h4>
+                            </div>
+                            <div class="alloc-details">
+                                <p>AWS/GCP Total: <strong>$1M</strong></p>
+                                <p>Distributed: <strong>$650k</strong></p>
+                            </div>
+                            <div class="draft-bar-bg">
+                                <div class="draft-bar-fill" style="width: 65%; background: var(--secondary);"></div>
+                            </div>
+                            <button class="btn-text-primary" onclick="window.location.href='404page.html'"
+                                style="margin-top: 10px;">Review Requests</button>
+                        </div>
+
+                        <div class="alloc-card glass-panel">
+                            <div class="alloc-header">
+                                <i class="fas fa-balance-scale" style="color: #FFD700;"></i>
+                                <h4>Legal & IP Hours</h4>
+                            </div>
+                            <div class="alloc-details">
+                                <p>Total Retainer: <strong>500 hrs</strong></p>
+                                <p>Utilized: <strong>210 hrs</strong></p>
+                            </div>
+                            <div class="draft-bar-bg">
+                                <div class="draft-bar-fill" style="width: 42%; background: #4CAF50;"></div>
+                            </div>
+                            <button class="btn-text-primary" onclick="window.location.href='404page.html'"
+                                style="margin-top: 10px;">Allocate Hours</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tab-mentors" class="content-tab">
+
+
+                <div class="app-banner glass-panel anim-item">
+                    <div class="app-banner-content">
+                        <span class="badge" style="background: rgba(108, 99, 255, 0.2); color: var(--primary);">Network
+                            Expansion</span>
+                        <h2>Invite Top-Tier Mentors</h2>
+                        <p>Expand your incubator's network by onboarding industry leaders, ex-founders, and domain
+                            experts. Send exclusive invitations to build a world-class mentor pool.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-users"></i> 24 Active Mentors</span>
+                            <span><i class="fas fa-envelope"></i> 8 Invites Pending</span>
+                        </div>
+                        <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-paper-plane"></i> Send Invitations</button>
+                    </div>
+                    <div class="app-banner-image">
+                        <img src="./asset/d3.webp" alt="Mentor Invite">
+                    </div>
+                </div>
+
+
+                <div class="mentor-kpi-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-chart-pie" style="color: var(--secondary);"></i>
+                        Mentorship Analytics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card glass-panel" style="border-top: 3px solid var(--secondary);">
+                            <div class="icon-box" style="color: var(--secondary);"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h3>Total Session Hours</h3>
+                                <h2>1,840 <small style="font-size: 0.9rem; color: var(--text-muted);">hrs</small></h2>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel" style="border-top: 3px solid #FFD700;">
+                            <div class="icon-box" style="color: #FFD700;"><i class="fas fa-star"></i></div>
+                            <div>
+                                <h3>Average Rating</h3>
+                                <h2>4.9 <small style="font-size: 0.9rem; color: var(--text-muted);">/ 5</small></h2>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel" style="border-top: 3px solid #4CAF50;">
+                            <div class="icon-box" style="color: #4CAF50;"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h3>Successful Matches</h3>
+                                <h2>56</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mentor-roster-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-chalkboard-teacher" style="color: var(--primary);"></i>
+                        Active Mentor Roster</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Manage your current mentors, their
+                        availability, and assigned startups.</p>
+                    <div class="roster-grid">
+                        <div class="roster-card glass-panel">
+                            <div class="roster-header">
+                                <img src="./asset/i8.webp" alt="Mentor">
+                                <div>
+                                    <h4>David Chen</h4>
+                                    <span class="role">Ex-VP @ Stripe</span>
+                                </div>
+                            </div>
+                            <div class="roster-details">
+                                <p><i class="fas fa-briefcase"></i> <strong>Domain:</strong> FinTech, Growth</p>
+                                <p><i class="fas fa-building"></i> <strong>Startups:</strong> 3 Assigned</p>
+                                <p><i class="fas fa-calendar-check"></i> <strong>Availability:</strong> 5 hrs/week</p>
+                            </div>
+                            <div class="roster-actions">
+                                <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                    style="width: 100%;">View Profile</button>
+                            </div>
+                        </div>
+
+                        <div class="roster-card glass-panel">
+                            <div class="roster-header">
+                                <img src="./asset/c9.webp" alt="Mentor">
+                                <div>
+                                    <h4>Sarah Jenkins</h4>
+                                    <span class="role">Partner @ Sequoia</span>
+                                </div>
+                            </div>
+                            <div class="roster-details">
+                                <p><i class="fas fa-briefcase"></i> <strong>Domain:</strong> VC, Pitching</p>
+                                <p><i class="fas fa-building"></i> <strong>Startups:</strong> 5 Assigned</p>
+                                <p><i class="fas fa-calendar-times" style="color: var(--accent);"></i>
+                                    <strong>Availability:</strong> Fully Booked
+                                </p>
+                            </div>
+                            <div class="roster-actions">
+                                <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                    style="width: 100%;">View Profile</button>
+                            </div>
+                        </div>
+
+                        <div class="roster-card glass-panel">
+                            <div class="roster-header">
+                                <img src="./asset/c5.webp" alt="Mentor">
+                                <div>
+                                    <h4>Marcus Reed</h4>
+                                    <span class="role">CTO @ TechNova</span>
+                                </div>
+                            </div>
+                            <div class="roster-details">
+                                <p><i class="fas fa-briefcase"></i> <strong>Domain:</strong> AI, Cloud Arch</p>
+                                <p><i class="fas fa-building"></i> <strong>Startups:</strong> 2 Assigned</p>
+                                <p><i class="fas fa-calendar-check"></i> <strong>Availability:</strong> 10 hrs/week</p>
+                            </div>
+                            <div class="roster-actions">
+                                <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                    style="width: 100%;">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mentor-feedback-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-comment-dots" style="color: #FFD700;"></i> Startup
+                        Feedback</h3>
+                    <div class="feedback-grid">
+                        <div class="feedback-card glass-panel">
+                            <div class="rating-stars" style="color: #FFD700; margin-bottom: 10px; font-size: 1.1rem;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="feedback-text">"David's insights on our pricing model were game-changing. We
+                                increased our MRR by 20% in just one month!"</p>
+                            <div class="feedback-meta">
+                                <span style="color: var(--primary); font-weight: bold;">- NeuroSync AI</span>
+                                <small style="color: var(--text-muted);">Session with David Chen</small>
+                            </div>
+                        </div>
+
+                        <div class="feedback-card glass-panel">
+                            <div class="rating-stars" style="color: #FFD700; margin-bottom: 10px; font-size: 1.1rem;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="feedback-text">"Marcus helped us restructure our AWS architecture, saving us
+                                thousands in cloud costs. Brilliant technical mentor."</p>
+                            <div class="feedback-meta">
+                                <span style="color: var(--secondary); font-weight: bold;">- EcoLogix</span>
+                                <small style="color: var(--text-muted);">Session with Marcus Reed</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner reverse-banner glass-panel anim-item"
+                    style="margin-top: 35px; border-left: none; border-right: 4px solid var(--accent);">
+                    <div class="app-banner-image">
+                        <img src="./asset/a2.webp" alt="Mentor Workshop">
+                    </div>
+                    <div class="app-banner-content">
+                        <h2>Host an Exclusive Workshop</h2>
+                        <p>Schedule a cohort-wide masterclass with your top mentors. Set up the virtual room, manage
+                            startup RSVPs, and automatically record the session for the incubator library.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-video"></i> Zoom Integrated</span>
+                        </div>
+                        <button class="btn-accent" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-calendar-plus"></i> Schedule Workshop</button>
+                    </div>
+                </div>
+
+
+                <div class="mentor-match-section anim-item" style="margin-top: 35px; margin-bottom: 35px;">
+                    <h3 class="section-title"><i class="fas fa-link" style="color: var(--primary);"></i> Pending Match
+                        Requests</h3>
+                    <div class="match-request-list">
+                        <div class="match-request-item glass-panel">
+                            <div class="match-startup">
+                                <h4>VaultSec <span class="badge"
+                                        style="background: rgba(255,255,255,0.05); font-size: 0.7rem; padding: 3px 8px;">Startup</span>
+                                </h4>
+                                <p>Requested help with: Enterprise B2B Sales</p>
+                            </div>
+                            <i class="fas fa-arrow-right match-arrow" style="color: var(--text-muted);"></i>
+                            <div class="match-suggested">
+                                <p style="color: var(--secondary); font-size: 0.85rem; margin-bottom: 3px;">AI Suggested
+                                    Mentor:</p>
+                                <h4>David Chen</h4>
+                            </div>
+                            <div class="match-actions">
+                                <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                    style="color: #4CAF50; border-color: #4CAF50;">Approve Match</button>
+                            </div>
+                        </div>
+
+                        <div class="match-request-item glass-panel">
+                            <div class="match-startup">
+                                <h4>HealthSync <span class="badge"
+                                        style="background: rgba(255,255,255,0.05); font-size: 0.7rem; padding: 3px 8px;">Startup</span>
+                                </h4>
+                                <p>Requested help with: FDA Compliance & Legal</p>
+                            </div>
+                            <i class="fas fa-arrow-right match-arrow" style="color: var(--text-muted);"></i>
+                            <div class="match-suggested">
+                                <p style="color: var(--accent); font-size: 0.85rem; margin-bottom: 3px;">Manual
+                                    Assignment Required</p>
+                                <h4>No exact AI match</h4>
+                            </div>
+                            <div class="match-actions">
+                                <button class="btn-outline-primary" onclick="window.location.href='404page.html'">Assign
+                                    Manually</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tab-programs" class="content-tab">
+
+
+                <div class="app-banner glass-panel anim-item">
+                    <div class="app-banner-content">
+                        <span class="badge" style="background: rgba(108, 99, 255, 0.2); color: var(--primary);">Flagship
+                            Program</span>
+                        <h2>Q3 Global Accelerator Bootcamp</h2>
+                        <p>Launch the highly anticipated 12-week intensive bootcamp for Cohort #14. This comprehensive
+                            program is designed to take early-stage startups from raw MVP to market-ready products with
+                            solid revenue models. Review the curriculum, finalize the mentor schedules, and broadcast
+                            the kickoff meeting link to all selected founders.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-calendar-check"></i> Starts: Oct 1, 2024</span>
+                            <span><i class="fas fa-building"></i> 25 Startups Enrolled</span>
+                        </div>
+                        <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-rocket"></i> Launch Bootcamp</button>
+                    </div>
+                    <div class="app-banner-image">
+                        <img src="./asset/t1.webp" alt="Bootcamp Kickoff">
+                    </div>
+                </div>
+
+
+                <div class="program-phase-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-stream" style="color: var(--secondary);"></i> Program
+                        Lifecycle & Milestones</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Track the current phase of the active
+                        cohort. Ensure all deliverables and workshops align with the weekly goals.</p>
+                    <div class="phase-grid">
+                        <div class="phase-card glass-panel completed">
+                            <div class="phase-header">
+                                <div class="phase-icon"><i class="fas fa-check"></i></div>
+                                <h4>Weeks 1-4: Foundation</h4>
+                            </div>
+                            <p>Focus on Customer Discovery, Lean Canvas validation, and building the initial Minimum
+                                Viable Product (MVP). <strong>(Completed successfully)</strong></p>
+                        </div>
+
+                        <div class="phase-card glass-panel active">
+                            <div class="phase-header">
+                                <div class="phase-icon"><i class="fas fa-spinner fa-spin"></i></div>
+                                <h4>Weeks 5-8: Go-to-Market</h4>
+                            </div>
+                            <p>Intensive sessions on B2B Sales, Growth Hacking, and Pricing Strategies. Startups must
+                                acquire their first 10 paying customers by Week 8.</p>
+                            <div class="progress-bar-bg" style="margin-top: 15px;">
+                                <div class="progress-fill" style="width: 60%; background: var(--secondary);"></div>
+                            </div>
+                        </div>
+
+                        <div class="phase-card glass-panel locked">
+                            <div class="phase-header">
+                                <div class="phase-icon"><i class="fas fa-lock"></i></div>
+                                <h4>Weeks 9-12: Fundraising</h4>
+                            </div>
+                            <p>Pitch deck preparation, financial modeling, and mock investor pitches. Culminates in the
+                                final evaluation for Demo Day selection.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="masterclass-grid-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-chalkboard" style="color: var(--primary);"></i> Upcoming
+                        Workshops & Masterclasses</h3>
+                    <div class="workshop-grid">
+                        <div class="workshop-card glass-panel">
+                            <div class="ws-date">
+                                <span>OCT</span>
+                                <strong>12</strong>
+                            </div>
+                            <div class="ws-content">
+                                <h4>Enterprise B2B Sales Playbook</h4>
+                                <p class="ws-desc">A deep dive into navigating complex enterprise procurement processes.
+                                    Learn how to identify decision-makers, handle objections, and close 6-figure deals
+                                    without massive marketing budgets.</p>
+                                <div class="ws-footer">
+                                    <span><i class="fas fa-clock"></i> 2:00 PM EST</span>
+                                    <button class="btn-text-primary" onclick="window.location.href='404page.html'">Edit
+                                        Event</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workshop-card glass-panel">
+                            <div class="ws-date"
+                                style="background: rgba(0, 212, 255, 0.1); border-color: var(--secondary); color: var(--secondary);">
+                                <span>OCT</span>
+                                <strong>18</strong>
+                            </div>
+                            <div class="ws-content">
+                                <h4>Legal & IP Protection for Tech</h4>
+                                <p class="ws-desc">Crucial workshop covering patent filings, trademarking your brand,
+                                    and structuring co-founder agreements. Avoid common legal pitfalls that scare away
+                                    Series A investors.</p>
+                                <div class="ws-footer">
+                                    <span><i class="fas fa-clock"></i> 10:00 AM EST</span>
+                                    <button class="btn-text-primary" onclick="window.location.href='404page.html'">Edit
+                                        Event</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner reverse-banner glass-panel anim-item"
+                    style="margin-top: 35px; border-left: none; border-right: 4px solid var(--accent);">
+                    <div class="app-banner-image">
+                        <img src="./asset/t6.webp" alt="Demo Day Management">
+                    </div>
+                    <div class="app-banner-content">
+                        <h2>Annual Investor Demo Day</h2>
+                        <p>The grand finale of Cohort #13. Curate the final list of top-performing startups to pitch
+                            live in front of 500+ global venture capitalists and angel investors. Manage the venue
+                            logistics, digital investor packets, and VIP seating arrangements.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-ticket-alt"></i> 450 RSVPs Confirmed</span>
+                            <span><i class="fas fa-microphone"></i> 15 Startups Pitching</span>
+                        </div>
+                        <button class="btn-accent" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-cogs"></i> Manage Event Logistics</button>
+                    </div>
+                </div>
+
+
+                <div class="guest-speakers-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-microphone-alt" style="color: #FFD700;"></i> Invited
+                        Guest Speakers</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Review the VIP industry experts scheduled
+                        to deliver keynotes this month.</p>
+                    <div class="speaker-grid">
+                        <div class="speaker-card glass-panel">
+                            <img src="./asset/i10.webp" alt="Speaker" class="speaker-img">
+                            <div class="speaker-info">
+                                <h4>Elena Rodriguez</h4>
+                                <span class="role">Chief Product Officer @ TechGiant</span>
+                                <p>"Building Products that Scale to Millions"</p>
+                            </div>
+                            <span class="status-badge approved">Confirmed</span>
+                        </div>
+
+                        <div class="speaker-card glass-panel">
+                            <img src="./asset/i7.webp" alt="Speaker" class="speaker-img">
+                            <div class="speaker-info">
+                                <h4>Michael Stone</h4>
+                                <span class="role">Managing Partner @ Capital V</span>
+                                <p>"What Seed Investors Actually Look For"</p>
+                            </div>
+                            <span class="status-badge pending">Awaiting RSVP</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="event-analytics-section anim-item" style="margin-top: 35px; margin-bottom: 35px;">
+                    <h3 class="section-title"><i class="fas fa-chart-line" style="color: #4CAF50;"></i> Program
+                        Engagement Analytics</h3>
+                    <div class="analytics-stats-grid">
+                        <div class="analytics-card glass-panel">
+                            <p>Average Workshop Attendance</p>
+                            <h2>94%</h2>
+                            <span class="trend up"><i class="fas fa-arrow-up"></i> 5% vs last cohort</span>
+                        </div>
+                        <div class="analytics-card glass-panel">
+                            <p>Total Events Hosted (YTD)</p>
+                            <h2>48</h2>
+                            <span class="trend neutral">On schedule</span>
+                        </div>
+                        <div class="analytics-card glass-panel">
+                            <p>Average Founder Rating</p>
+                            <h2>4.8/5</h2>
+                            <span class="trend up"><i class="fas fa-star" style="color: #FFD700;"></i> Highly
+                                Rated</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tab-investors" class="content-tab">
+
+
+                <div class="app-banner glass-panel anim-item">
+                    <div class="app-banner-content">
+                        <span class="badge" style="background: rgba(108, 99, 255, 0.2); color: var(--primary);">Network
+                            Expansion</span>
+                        <h2>Grow Your Investor Network</h2>
+                        <p>Expand our incubator's capital reach by onboarding top Venture Capitalists, Angel Syndicates,
+                            and Corporate VC funds. Invite them to join our exclusive deal flow portal.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-handshake"></i> 120+ Active Investors</span>
+                            <span><i class="fas fa-envelope"></i> 15 Pending Invites</span>
+                        </div>
+                        <button class="btn-primary" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-user-plus"></i> Invite Investors</button>
+                    </div>
+                    <div class="app-banner-image">
+                        <img src="./asset/a6.webp" alt="Investor Network">
+                    </div>
+                </div>
+
+
+                <div class="investor-kpi-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-chart-line" style="color: var(--secondary);"></i> Capital
+                        Overview</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card glass-panel" style="border-top: 3px solid #4CAF50;">
+                            <div class="icon-box" style="color: #4CAF50;"><i class="fas fa-sack-dollar"></i></div>
+                            <div>
+                                <h3>Total Deployed Capital</h3>
+                                <h2>$12.5M</h2>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel" style="border-top: 3px solid var(--secondary);">
+                            <div class="icon-box" style="color: var(--secondary);"><i class="fas fa-file-signature"></i>
+                            </div>
+                            <div>
+                                <h3>Active Deals in Q3</h3>
+                                <h2>14</h2>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel" style="border-top: 3px solid var(--primary);">
+                            <div class="icon-box" style="color: var(--primary);"><i class="fas fa-ticket-alt"></i></div>
+                            <div>
+                                <h3>Average Ticket Size</h3>
+                                <h2>$250k</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="vc-directory-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-building" style="color: var(--primary);"></i> Partner VC
+                        Firms</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Manage our tier-1 investment partners and
+                        track their investment thesis.</p>
+                    <div class="vc-grid">
+                        <div class="vc-card glass-panel">
+                            <div class="vc-header">
+                                <img src="./asset/a2.webp" alt="Sequoia">
+                                <div>
+                                    <h4>Sequoia Capital</h4>
+                                    <span class="vc-type">Tier 1 • Series A</span>
+                                </div>
+                            </div>
+                            <div class="vc-focus">
+                                <span class="search-tag">AI/ML</span>
+                                <span class="search-tag">SaaS</span>
+                                <span class="search-tag">FinTech</span>
+                            </div>
+                            <div class="vc-footer">
+                                <span><i class="fas fa-chart-pie"></i> 3 Deals Closed</span>
+                                <button class="btn-text-primary" onclick="window.location.href='404page.html'">View
+                                    Firm</button>
+                            </div>
+                        </div>
+
+                        <div class="vc-card glass-panel">
+                            <div class="vc-header">
+                                <img src="./asset/a3.webp" alt="a16z">
+                                <div>
+                                    <h4>Andreessen Horowitz</h4>
+                                    <span class="vc-type">Tier 1 • Seed & Crypto</span>
+                                </div>
+                            </div>
+                            <div class="vc-focus">
+                                <span class="search-tag">Web3</span>
+                                <span class="search-tag">Healthcare</span>
+                            </div>
+                            <div class="vc-footer">
+                                <span><i class="fas fa-chart-pie"></i> 1 Deal Closed</span>
+                                <button class="btn-text-primary" onclick="window.location.href='404page.html'">View
+                                    Firm</button>
+                            </div>
+                        </div>
+
+                        <div class="vc-card glass-panel">
+                            <div class="vc-header">
+                                <img src="./asset/d3.webp" alt="Local Angels">
+                                <div>
+                                    <h4>Valley Angel Syndicate</h4>
+                                    <span class="vc-type">Syndicate • Pre-Seed</span>
+                                </div>
+                            </div>
+                            <div class="vc-focus">
+                                <span class="search-tag">Consumer</span>
+                                <span class="search-tag">EdTech</span>
+                            </div>
+                            <div class="vc-footer">
+                                <span><i class="fas fa-chart-pie"></i> 8 Deals Closed</span>
+                                <button class="btn-text-primary" onclick="window.location.href='404page.html'">View
+                                    Firm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="warm-intro-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-people-arrows" style="color: var(--accent);"></i> Warm
+                        Intro Requests</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Review requests from founders asking for
+                        introductions to specific investors in our network.</p>
+                    <div class="intro-list">
+                        <div class="intro-item glass-panel">
+                            <div class="intro-startup">
+                                <h4>NeuroSync AI <span class="badge"
+                                        style="background: rgba(108, 99, 255, 0.2); color: var(--primary); font-size: 0.7rem; padding: 3px 8px;">Startup</span>
+                                </h4>
+                                <p>Founder: Alex Smith</p>
+                            </div>
+                            <div class="intro-arrow">
+                                <i class="fas fa-arrow-right" style="color: var(--text-muted);"></i>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">Requests intro
+                                    to</p>
+                            </div>
+                            <div class="intro-investor">
+                                <h4 style="color: var(--secondary);">Lightspeed Ventures</h4>
+                                <p>Partner: Michael Stone</p>
+                            </div>
+                            <div class="intro-actions">
+                                <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                    style="color: #4CAF50; border-color: #4CAF50;"><i class="fas fa-check"></i> Approve
+                                    & Send</button>
+                                <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                    style="color: var(--accent); border-color: var(--accent);"><i
+                                        class="fas fa-times"></i> Decline</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner reverse-banner glass-panel anim-item"
+                    style="margin-top: 35px; border-left: none; border-right: 4px solid var(--accent);">
+                    <div class="app-banner-image">
+                        <img src="./asset/t15.webp" alt="Investor Mixer">
+                    </div>
+                    <div class="app-banner-content">
+                        <h2>Host Private Investor Mixer</h2>
+                        <p>Organize closed-door networking events for our top-tier LPs, VCs, and angel investors to meet
+                            the most promising founders in Cohort #14 before public Demo Day.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-wine-glass"></i> Q4 Mixer Event</span>
+                            <span><i class="fas fa-calendar-alt"></i> Nov 20, 2024</span>
+                        </div>
+                        <button class="btn-accent" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-glass-cheers"></i> Manage Event</button>
+                    </div>
+                </div>
+
+
+                <div class="due-diligence-section anim-item" style="margin-top: 35px; margin-bottom: 35px;">
+                    <h3 class="section-title"><i class="fas fa-search-dollar" style="color: #FFD700;"></i> Active Due
+                        Diligence Tracker</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Track startups currently undergoing
+                        financial and legal due diligence by investors.</p>
+                    <div class="dd-grid">
+                        <div class="dd-card glass-panel" style="border-top: 3px solid #ffab00;">
+                            <div class="dd-header">
+                                <h4>EcoLogix</h4>
+                                <span class="status-badge"
+                                    style="background: rgba(255, 171, 0, 0.2); color: #ffab00;">In Progress</span>
+                            </div>
+                            <div class="dd-info">
+                                <p><strong>Lead Investor:</strong> Sequoia Capital</p>
+                                <p><strong>Round Size:</strong> $1.5M Seed</p>
+                            </div>
+                            <div class="dd-progress">
+                                <div class="progress-bar-bg">
+                                    <div class="progress-fill" style="width: 70%; background: #ffab00;"></div>
+                                </div>
+                                <small>70% - Legal Review</small>
+                            </div>
+                        </div>
+
+                        <div class="dd-card glass-panel" style="border-top: 3px solid #4CAF50;">
+                            <div class="dd-header">
+                                <h4>VaultSec</h4>
+                                <span class="status-badge"
+                                    style="background: rgba(76, 175, 80, 0.2); color: #4CAF50;">Term Sheet Issued</span>
+                            </div>
+                            <div class="dd-info">
+                                <p><strong>Lead Investor:</strong> Andreessen Horowitz</p>
+                                <p><strong>Round Size:</strong> $5M Series A</p>
+                            </div>
+                            <div class="dd-progress">
+                                <div class="progress-bar-bg">
+                                    <div class="progress-fill" style="width: 95%; background: #4CAF50;"></div>
+                                </div>
+                                <small>95% - Final Signatures</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tab-settings" class="content-tab">
+
+
+                <div class="system-health-section anim-item">
+                    <h3 class="section-title"><i class="fas fa-server" style="color: var(--secondary);"></i> System
+                        Health & Storage</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Current status of the incubator platform
+                        servers and document storage.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card glass-panel" style="border-top: 3px solid #4CAF50;">
+                            <div class="icon-box" style="color: #4CAF50;"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h3>System Status</h3>
+                                <h2 style="font-size: 1.5rem; color: #4CAF50;">All Systems Operational</h2>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel" style="border-top: 3px solid var(--primary);">
+                            <div class="icon-box" style="color: var(--primary);"><i class="fas fa-database"></i></div>
+                            <div>
+                                <h3>Cloud Storage Used</h3>
+                                <h2 style="font-size: 1.5rem;">450 GB <small
+                                        style="font-size: 0.9rem; color: var(--text-muted);">/ 1 TB</small></h2>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel" style="border-top: 3px solid var(--accent);">
+                            <div class="icon-box" style="color: var(--accent);"><i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div>
+                                <h3>API Limits</h3>
+                                <h2 style="font-size: 1.5rem;">85% <small
+                                        style="font-size: 0.9rem; color: var(--text-muted);">utilized this month</small>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner glass-panel anim-item" style="margin-top: 35px; border-color: var(--accent);">
+                    <div class="app-banner-content">
+                        <span class="badge"
+                            style="background: rgba(255, 107, 107, 0.2); color: var(--accent);">Enterprise Plan</span>
+                        <h2>Upgrade Platform Tier</h2>
+                        <p>Unlock advanced features for your incubator including white-label branding, custom domain
+                            support, and unlimited startup onboarding. Scale your operations without limits.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-infinity"></i> Unlimited Cohorts</span>
+                            <span><i class="fas fa-paint-brush"></i> Custom Branding</span>
+                        </div>
+                        <button class="btn-accent" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-crown"></i> View Enterprise Plans</button>
+                    </div>
+                    <div class="app-banner-image">
+                        <img src="./asset/t14.webp" alt="Platform Upgrade">
+                    </div>
+                </div>
+
+
+                <div class="admin-team-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-users-cog" style="color: var(--primary);"></i> Admin Team
+                        & Permissions</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Active staff members managing the
+                        incubator platform.</p>
+                    <div class="admin-role-grid">
+                        <div class="role-card glass-panel">
+                            <div class="role-header">
+                                <div class="role-avatar"><i class="fas fa-user-shield"></i></div>
+                                <div>
+                                    <h4>Super Admin</h4>
+                                    <span class="status-badge approved">Full Access</span>
+                                </div>
+                            </div>
+                            <div class="role-users">
+                                <p><i class="fas fa-user"></i> Tech Founder (You)</p>
+                                <p><i class="fas fa-user"></i> Sarah Jenkins</p>
+                            </div>
+                            <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                style="margin-top: 15px; width: 100%;">Manage Roles</button>
+                        </div>
+
+                        <div class="role-card glass-panel">
+                            <div class="role-header">
+                                <div class="role-avatar"
+                                    style="background: rgba(0, 212, 255, 0.2); color: var(--secondary);"><i
+                                        class="fas fa-user-edit"></i></div>
+                                <div>
+                                    <h4>Program Managers</h4>
+                                    <span class="status-badge pending"
+                                        style="color: var(--secondary); background: rgba(0, 212, 255, 0.1);">Limited
+                                        Access</span>
+                                </div>
+                            </div>
+                            <div class="role-users">
+                                <p><i class="fas fa-user"></i> David Chen</p>
+                                <p><i class="fas fa-user"></i> Anita Patel</p>
+                            </div>
+                            <button class="btn-outline-small" onclick="window.location.href='404page.html'"
+                                style="margin-top: 15px; width: 100%;">Manage Roles</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="admin-integrations-section anim-item" style="margin-top: 35px;">
+                    <h3 class="section-title"><i class="fas fa-plug" style="color: #FFD700;"></i> Connected Integrations
+                    </h3>
+                    <div class="integration-cards-grid">
+                        <div class="integration-box glass-panel">
+                            <i class="fab fa-slack" style="color: #E01E5A; font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h4>Slack Workspace</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Automated
+                                alerts for new applications and mentor matches.</p>
+                            <span class="status-indicator active"><i class="fas fa-check-circle"></i> Connected</span>
+                        </div>
+
+                        <div class="integration-box glass-panel">
+                            <i class="fas fa-video"
+                                style="color: var(--secondary); font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h4>Zoom Pro</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Automatic
+                                meeting link generation for masterclasses.</p>
+                            <span class="status-indicator active"><i class="fas fa-check-circle"></i> Connected</span>
+                        </div>
+
+                        <div class="integration-box glass-panel">
+                            <i class="fab fa-aws" style="color: #FF9900; font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h4>AWS Activate</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Credit
+                                distribution portal for cohort startups.</p>
+                            <span class="status-indicator warning" style="color: #ffab00;"><i
+                                    class="fas fa-exclamation-circle"></i> Needs Renewal</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app-banner reverse-banner glass-panel anim-item"
+                    style="margin-top: 35px; border-left: none; border-right: 4px solid var(--secondary);">
+                    <div class="app-banner-image">
+                        <img src="./asset/t13.webp" alt="Data Backup">
+                    </div>
+                    <div class="app-banner-content">
+                        <h2>Platform Data Export</h2>
+                        <p>Generate a complete secure backup of all startup profiles, mentor feedback, financial audits,
+                            and platform logs. Ideal for end-of-year compliance reporting.</p>
+                        <div class="banner-meta">
+                            <span><i class="fas fa-file-csv"></i> CSV & PDF Formats</span>
+                            <span><i class="fas fa-lock"></i> AES-256 Encrypted</span>
+                        </div>
+                        <button class="btn-secondary" onclick="window.location.href='404page.html'"><i
+                                class="fas fa-cloud-download-alt"></i> Generate Archive</button>
+                    </div>
+                </div>
+
+
+                <div class="admin-security-logs anim-item" style="margin-top: 35px; margin-bottom: 35px;">
+                    <h3 class="section-title"><i class="fas fa-shield-alt" style="color: #4CAF50;"></i> Admin Access
+                        Logs</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Recent login activity from admin accounts.
+                    </p>
+                    <div class="security-log-list">
+                        <div class="log-row glass-panel">
+                            <div class="log-icon" style="color: #4CAF50;"><i class="fas fa-sign-in-alt"></i></div>
+                            <div class="log-details">
+                                <h4>Tech Founder (Super Admin)</h4>
+                                <p>Logged in via Mac OS • Chrome</p>
+                            </div>
+                            <div class="log-time">
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Just now • IP:
+                                    192.168.1.1</span>
+                            </div>
+                        </div>
+
+                        <div class="log-row glass-panel">
+                            <div class="log-icon" style="color: #4CAF50;"><i class="fas fa-sign-in-alt"></i></div>
+                            <div class="log-details">
+                                <h4>Sarah Jenkins (Super Admin)</h4>
+                                <p>Logged in via Windows • Edge</p>
+                            </div>
+                            <div class="log-time">
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">2 hours ago • IP:
+                                    10.0.0.5</span>
+                            </div>
+                        </div>
+
+                        <div class="log-row glass-panel" style="border-left: 3px solid var(--accent);">
+                            <div class="log-icon" style="color: var(--accent);"><i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="log-details">
+                                <h4>Failed Login Attempt</h4>
+                                <p>Unknown User • Invalid Password</p>
+                            </div>
+                            <div class="log-time">
+                                <span style="color: var(--accent); font-size: 0.85rem;">Yesterday • IP:
+                                    104.28.19.42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            sidebar.classList.toggle('mobile-open');
+            if (sidebar.classList.contains('mobile-open')) {
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Lock background scroll
+            } else {
+                overlay.classList.remove('show');
+                document.body.style.overflow = 'auto'; // Unlock background scroll
+            }
+        }
+
+
+        function switchTab(tabId, element, pageTitle) {
+            document.querySelectorAll('.content-tab').forEach(tab => tab.classList.remove('active-tab'));
+            document.querySelectorAll('.nav-links .nav-item').forEach(nav => nav.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active-tab');
+            element.classList.add('active');
+            document.getElementById('dynamic-page-title').innerText = pageTitle;
+
+
+            if (window.innerWidth <= 768) {
+                toggleSidebar();
+            }
+
+            initAnimations();
+        }
+
+
+        function initAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.anim-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+            const storedEmail = localStorage.getItem('loggedInEmail') || "admin@incubator.com";
+
+
+            let extractedName = storedEmail.split('@')[0];
+            extractedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+
+            document.querySelectorAll(".user-name").forEach(el => el.textContent = extractedName);
+            document.querySelectorAll(".user-email-display").forEach(el => el.textContent = storedEmail);
+
+            initAnimations();
+
+
+            const chartElement = document.getElementById('adminChart');
+            if (chartElement) {
+                const ctx = chartElement.getContext('2d');
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'New Startups',
+                            data: [5, 8, 12, 7, 15, 10],
+                            backgroundColor: '#6c63ff', // --primary color
+                            borderRadius: 6,
+                            borderWidth: 0,
+                            hoverBackgroundColor: '#00d4ff' // --secondary color on hover
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { grid: { display: false }, ticks: { color: '#a0aabf' } },
+                            y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#a0aabf', stepSize: 5 } }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

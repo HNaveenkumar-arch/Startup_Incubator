@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Your Website Title Here">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
     <title>StartupHub Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-         
         * {
             box-sizing: border-box;
             margin: 0;
@@ -37,14 +44,14 @@
             }
         }
 
-         
+
         .page-wrapper {
             width: 100%;
             max-width: 1100px;
             position: relative;
         }
 
-         
+
         .btn-back-home {
             position: absolute;
             top: -45px;
@@ -73,7 +80,7 @@
             transform: translateY(-2px);
         }
 
-         
+
         .login-container {
             display: flex;
             width: 100%;
@@ -86,7 +93,7 @@
             min-height: 650px;
         }
 
-         
+
         .form-section {
             flex: 1;
             padding: 40px 40px;
@@ -116,7 +123,7 @@
             margin-bottom: 25px;
         }
 
-         
+
         .role-selector {
             display: flex;
             background: rgba(0, 0, 0, 0.3);
@@ -149,7 +156,7 @@
             box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
         }
 
-         
+
         .input-group {
             margin-bottom: 15px;
             position: relative;
@@ -165,7 +172,7 @@
             letter-spacing: 1px;
         }
 
-         
+
         .input-field {
             width: 100%;
             padding: 12px 40px 12px 40px;
@@ -191,7 +198,7 @@
             font-size: 14px;
         }
 
-         
+
         .toggle-pwd {
             position: absolute;
             right: 15px;
@@ -206,7 +213,7 @@
             color: #6C63FF;
         }
 
-         
+
         .error-message {
             color: #FF6B6B;
             font-size: 12px;
@@ -220,7 +227,7 @@
             box-shadow: 0 0 8px rgba(255, 107, 107, 0.2);
         }
 
-         
+
         .submit-btn {
             width: 100%;
             padding: 14px;
@@ -253,7 +260,7 @@
             font-weight: bold;
         }
 
-         
+
         .content-section {
             flex: 1;
             position: relative;
@@ -322,7 +329,7 @@
             line-height: 1.6;
         }
 
-         
+
         @media (max-width: 900px) {
             .btn-back-home {
                 top: -40px;
@@ -343,6 +350,10 @@
                 padding: 20px;
             }
         }
+
+        .logo {
+            width: 140px;
+        }
     </style>
 </head>
 
@@ -350,19 +361,19 @@
 
     <div class="page-wrapper">
 
-         
+
         <a href="index.html" class="btn-back-home">
             <i class="fa-solid fa-arrow-left"></i> Back to Home
         </a>
 
         <div class="login-container">
-             
+
             <div class="form-section">
-                <h1 class="logo-title">🚀 <span>StartupHub</span></h1>
+                <a href="index.html"><img src="./asset/Logo blue.webp" alt="logo" class="logo"></a>
                 <h2 style="font-size: 22px; margin-top: 10px; margin-bottom: 5px;">Create Account ⚔️</h2>
                 <p class="subtitle">Register records on global incubator nodes.</p>
 
-                 
+
                 <div class="role-selector">
                     <button type="button" class="role-btn active" onclick="selectRole('founder', this)">
                         <i class="fa-solid fa-rocket"></i> Founder
@@ -375,7 +386,7 @@
                 <form id="signupForm" onsubmit="return validateSignupForm(event)" novalidate>
                     <input type="hidden" id="selectedRole" value="founder">
 
-                     
+
                     <div class="input-group">
                         <label>Full Name</label>
                         <i class="fa-solid fa-user input-icon"></i>
@@ -383,7 +394,7 @@
                         <div id="nameError" class="error-message">Name cannot contain numbers.</div>
                     </div>
 
-                     
+
                     <div class="input-group">
                         <label>Email Address</label>
                         <i class="fa-solid fa-envelope input-icon"></i>
@@ -391,23 +402,23 @@
                         <div id="emailError" class="error-message">Please enter a valid email address.</div>
                     </div>
 
-                     
+
                     <div class="input-group">
                         <label>Create Password</label>
                         <i class="fa-solid fa-lock input-icon"></i>
                         <input type="password" id="password" class="input-field" placeholder="Minimum 6 characters">
-                         
+
                         <i class="fa-solid fa-eye-slash toggle-pwd" onclick="togglePassword('password', this)"></i>
                         <div id="passwordError" class="error-message">Password must be at least 6 characters.</div>
                     </div>
 
-                     
+
                     <div class="input-group">
                         <label>Confirm Password</label>
                         <i class="fa-solid fa-shield-halved input-icon"></i>
                         <input type="password" id="confirmPassword" class="input-field"
                             placeholder="Re-enter your password">
-                         
+
                         <i class="fa-solid fa-eye-slash toggle-pwd"
                             onclick="togglePassword('confirmPassword', this)"></i>
                         <div id="confirmError" class="error-message">Passwords do not match.</div>
@@ -419,10 +430,10 @@
                 <p class="signup-link">Already enlisted? <a href="login.html">Login here</a></p>
             </div>
 
-             
+
             <div class="content-section">
                 <video class="bg-video" autoplay loop muted playsinline>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="./asset/v5.mp4" type="video/mp4">
                 </video>
                 <div class="video-overlay"></div>
 
@@ -439,54 +450,54 @@
 
     </div>
 
-     
+
     <script>
- 
+
         function selectRole(role, element) {
             document.getElementById('selectedRole').value = role;
             document.querySelectorAll('.role-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
         }
 
- 
+
         function togglePassword(inputId, iconElement) {
             const input = document.getElementById(inputId);
             if (input.type === "password") {
                 input.type = "text";
- 
+
                 iconElement.classList.remove("fa-eye-slash");
                 iconElement.classList.add("fa-eye");
             } else {
                 input.type = "password";
- 
+
                 iconElement.classList.remove("fa-eye");
                 iconElement.classList.add("fa-eye-slash");
             }
         }
 
- 
+
         function validateSignupForm(event) {
             event.preventDefault();
 
             let isValid = true;
 
- 
+
             const fullname = document.getElementById('fullname');
             const email = document.getElementById('email');
             const password = document.getElementById('password');
             const confirmPassword = document.getElementById('confirmPassword');
 
- 
+
             const nameError = document.getElementById('nameError');
             const emailError = document.getElementById('emailError');
             const passwordError = document.getElementById('passwordError');
             const confirmError = document.getElementById('confirmError');
 
- 
+
             [fullname, email, password, confirmPassword].forEach(input => input.classList.remove('error'));
             [nameError, emailError, passwordError, confirmError].forEach(error => error.style.display = 'none');
 
- 
+
             const nameRegex = /^[A-Za-z\s]+$/; // Only alphabets and spaces
             if (fullname.value.trim() === '') {
                 fullname.classList.add('error');
@@ -500,21 +511,21 @@
                 isValid = false;
             }
 
- 
+
             if (email.value.trim() === '' || !email.value.includes('@') || !email.value.includes('.')) {
                 email.classList.add('error');
                 emailError.style.display = 'block';
                 isValid = false;
             }
 
- 
+
             if (password.value.trim().length < 6) {
                 password.classList.add('error');
                 passwordError.style.display = 'block';
                 isValid = false;
             }
 
- 
+
             if (confirmPassword.value.trim() === '') {
                 confirmPassword.classList.add('error');
                 confirmError.innerText = 'Please confirm your password.';
@@ -527,10 +538,10 @@
                 isValid = false;
             }
 
- 
+
             if (isValid) {
                 const role = document.getElementById('selectedRole').value;
-                alert(`Account created successfully for ${fullname.value} as ${role.toUpperCase()}!\n\nWelcome to StartupHub!`);
+                window.location.href = 'login.html'
             }
 
             return isValid;
