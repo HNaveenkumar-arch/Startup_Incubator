@@ -1396,9 +1396,7 @@ body {
 .ai-mentor-match {
   text-align: center;
   padding: 40px 20px;
-  background:
-    url("./asset/r1.webp"),
-    var(--bg-glass);
+  background: url("./asset/r1.webp"), var(--bg-glass);
 }
 .ai-match-header h3 {
   font-size: 1.8rem;

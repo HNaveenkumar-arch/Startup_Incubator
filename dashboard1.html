@@ -1081,7 +1081,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Animate only once
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -1116,8 +1116,8 @@
 
 
                 let gradientFill = ctx.createLinearGradient(0, 0, 0, 300);
-                gradientFill.addColorStop(0, 'rgba(108, 99, 255, 0.4)'); // --primary
-                gradientFill.addColorStop(1, 'rgba(0, 212, 255, 0.0)');  // --secondary
+                gradientFill.addColorStop(0, 'rgba(108, 99, 255, 0.4)');
+                gradientFill.addColorStop(1, 'rgba(0, 212, 255, 0.0)');
 
                 new Chart(ctx, {
                     type: 'line',
@@ -1126,13 +1126,13 @@
                         datasets: [{
                             label: 'Productivity Score',
                             data: [20, 45, 60, 85, 95],
-                            borderColor: '#00d4ff', // --secondary
+                            borderColor: '#00d4ff',
                             backgroundColor: gradientFill,
                             borderWidth: 3,
-                            tension: 0.4, // smooth curves
+                            tension: 0.4,
                             fill: true,
                             pointBackgroundColor: '#050810',
-                            pointBorderColor: '#6c63ff', // --primary
+                            pointBorderColor: '#6c63ff',
                             pointBorderWidth: 2,
                             pointRadius: 5,
                             pointHoverRadius: 8

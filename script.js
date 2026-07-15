@@ -1,4 +1,4 @@
- 
+
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
- 
+
 const hamburger = document.getElementById('hamburger');
 const navWrapper = document.getElementById('nav-wrapper');
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -18,7 +18,7 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navWrapper.classList.toggle('active');
 
- 
+
     if (navWrapper.classList.contains('active')) {
         document.body.style.overflow = 'hidden';
     } else {
@@ -26,16 +26,16 @@ hamburger.addEventListener('click', () => {
     }
 });
 
- 
+
 navLinks.forEach(link => {
     link.addEventListener('click', function () {
- 
+
         navLinks.forEach(l => l.classList.remove('active'));
 
- 
+
         this.classList.add('active');
 
- 
+
         if (navWrapper.classList.contains('active')) {
             hamburger.classList.remove('active');
             navWrapper.classList.remove('active');
@@ -46,7 +46,7 @@ navLinks.forEach(link => {
 
 
 
- 
+
 document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
         root: null,
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
- 
+
     const footerElements = document.querySelectorAll('.footer-fade-in');
     footerElements.forEach(el => observer.observe(el));
 });

@@ -16,8 +16,7 @@
       rgba(5, 5, 10, 0.95) 30%,
       rgba(5, 5, 10, 0.7) 100%
     ),
-    url("./asset/i1.webp")
-      center/cover no-repeat;
+    url("./asset/i1.webp") center/cover no-repeat;
   background-attachment: fixed;
   color: var(--text-main);
   overflow: hidden;

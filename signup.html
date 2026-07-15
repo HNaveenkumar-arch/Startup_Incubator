@@ -498,7 +498,7 @@
             [nameError, emailError, passwordError, confirmError].forEach(error => error.style.display = 'none');
 
 
-            const nameRegex = /^[A-Za-z\s]+$/; // Only alphabets and spaces
+            const nameRegex = /^[A-Za-z\s]+$/;
             if (fullname.value.trim() === '') {
                 fullname.classList.add('error');
                 nameError.innerText = 'Name is required.';

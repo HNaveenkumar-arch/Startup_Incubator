@@ -1357,10 +1357,10 @@
             sidebar.classList.toggle('mobile-open');
             if (sidebar.classList.contains('mobile-open')) {
                 overlay.classList.add('show');
-                document.body.style.overflow = 'hidden'; // Lock background scroll
+                document.body.style.overflow = 'hidden';
             } else {
                 overlay.classList.remove('show');
-                document.body.style.overflow = 'auto'; // Unlock background scroll
+                document.body.style.overflow = 'auto';
             }
         }
 
@@ -1430,10 +1430,10 @@
                         datasets: [{
                             label: 'New Startups',
                             data: [5, 8, 12, 7, 15, 10],
-                            backgroundColor: '#6c63ff', // --primary color
+                            backgroundColor: '#6c63ff',
                             borderRadius: 6,
                             borderWidth: 0,
-                            hoverBackgroundColor: '#00d4ff' // --secondary color on hover
+                            hoverBackgroundColor: '#00d4ff'
                         }]
                     },
                     options: {
